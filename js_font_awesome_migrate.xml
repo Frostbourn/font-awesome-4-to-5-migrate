@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/**
+ * @copyright	Copyright (c) 2018 JS Network Solutions. All rights reserved.
+ * @license		http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
+ */
+-->
+<extension type="plugin" version="3.0" group="system" method="upgrade">
+	<name>System - JS Font Awesome Migrate</name>
+	<author>Jakub Skowronski</author>
+	<creationDate>December 2018</creationDate>
+	<copyright>Copyright (c) 2018 JS Network Solutions. All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>support@jsns.eu</authorEmail>
+	<authorUrl>https://jsns.eu</authorUrl>
+	<version>1.0.5</version>
+	<description>
+	<![CDATA[
+		<p>This plugin allows you to migrate Font Awesome 4 to 5 without manually editing the code.</p>
+		<p>In example: <strong>fa-joomla</strong> => <strong>fab fa-joomla</strong></p>
+	]]>
+	</description>
+
+	<files>
+		<filename plugin="js_font_awesome_migrate">js_font_awesome_migrate.php</filename>
+		<filename>index.html</filename>
+	</files>
+
+	<languages>
+		<language tag="en-GB">en-GB.plg_system_js_font_awesome_migrate.ini</language>
+		<language tag="en-GB">en-GB.plg_system_js_font_awesome_migrate.sys.ini</language>
+	</languages>
+	<media folder="media" destination="js_font_awesome_migrate">
+		<folder>js</folder>
+	</media>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+			<field name="items_fa" type="Repeatable" icon="list" label="Add more icons" select="Add / Edit">
+		          <fieldset hidden="true" name="items_modal" repeat="true">
+		            <field name="title" label="Font Awesome 4 class" type="text" class="input-large" filter="safehtml" description="https://fontawesome.com/v4.7.0/icons" />
+		            <field name="link" label="Font Awesome 5 class" type="text" class="input-large" filter="safehtml" description="https://fontawesome.com/icons" />
+		         </fieldset>
+		    </field>
+		</fieldset>
+	  </fields>
+	</config>
+</extension>
