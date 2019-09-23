@@ -24,14 +24,13 @@ class plgSystemJs_Font_Awesome_Migrate extends JPlugin {
 		JHtml::_('jquery.framework');
 
 		if ($app->isSite()) {
-
 			$document->addScript('/media/js_font_awesome_migrate/js/fontawesome4to5.js');
 			$document->addStyleSheet('https://use.fontawesome.com/releases/v5.5.0/css/all.css');
 
 			$item_params = $this->params->get('items_fa'); // <--change
-        	$json = json_decode($item_params, true);
+        		$json = json_decode($item_params, true);
 
-        	if (is_array($json)) {
+        if (is_array($json)) {
             if (!function_exists('items')) { // <--change
                 function items($array)
                 { // <--change
@@ -53,11 +52,8 @@ class plgSystemJs_Font_Awesome_Migrate extends JPlugin {
         	 	foreach ($items as $key => $value) { $missing_icons .= '"' .$value[0]. '": "' .$value[1]. '",'; } 
         	$missing_icons .= '});});';
 		}
-
 		$document->addScriptDeclaration($missing_icons);
-
-        return;
-
+       		return;
         }
-	}
+    }
 }
