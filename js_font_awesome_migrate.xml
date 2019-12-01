@@ -13,14 +13,17 @@
 	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
 	<authorEmail>support@jsns.eu</authorEmail>
 	<authorUrl>https://jsns.eu</authorUrl>
-	<version>1.0.5</version>
+	<version>1.6.0</version>
 	<description>
 	<![CDATA[
+		<a title="" href="https://jsns.eu" target="_blank"><img style="display: block; margin-left: auto; margin-right: auto;" src="https://jsns.eu/images/logo-website.fw.png" alt=""/></a><br>
 		<p>This plugin allows you to migrate Font Awesome 4 to 5 without manually editing the code.</p>
 		<p>In example: <strong>fa-joomla</strong> => <strong>fab fa-joomla</strong></p>
 	]]>
 	</description>
-
+	<updateservers>
+		<server type="collection" priority="1" name="JS Font Awesome Migrate">https://jsns.eu/fontawesome.xml</server>
+	</updateservers>
 	<files>
 		<filename plugin="js_font_awesome_migrate">js_font_awesome_migrate.php</filename>
 		<filename>index.html</filename>
@@ -36,6 +39,7 @@
 	<config>
 		<fields name="params">
 			<fieldset name="basic">
+			<field name="url_fa" type="text" label="Custom CDN" default="https://use.fontawesome.com/releases/v5.5.0/css/all.css"/>
 			<field name="items_fa" type="Repeatable" icon="list" label="Add more icons" select="Add / Edit">
 		          <fieldset hidden="true" name="items_modal" repeat="true">
 		            <field name="title" label="Font Awesome 4 class" type="text" class="input-large" filter="safehtml" description="https://fontawesome.com/v4.7.0/icons" />
