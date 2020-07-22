@@ -1,7 +1,3 @@
-/*
- * Migrate Fontawesome 4 to Fontawesome 5
- * @website https://www.litecart.net/
-*/
 
 jQuery(function($){
 $.fontmigrate = function (options) {
